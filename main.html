@@ -1,16 +1,145 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #333;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .gender-group label {
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <div class="container">
+        <h1>Job Application Form</h1>
+
+        <form action="submit_form.php" method="POST">
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <!-- Gender Field (Radio Buttons) -->
+            <div class="form-group gender-group">
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+            </div>
+
+            <!-- Laptop Brands Field (Dropdown) -->
+            <div class="form-group">
+                <label for="laptop">Laptop Brand:</label>
+                <select id="laptop" name="laptop">
+                    <option value="Apple">Apple</option>
+                    <option value="Asus">Asus</option>
+                    <option value="HP">HP</option>
+                </select>
+            </div>
+
+            <!-- Age Field -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required placeholder="Enter your age">
+            </div>
+
+            <!-- Date of Birth Field -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+
+            <!-- Portfolio URL Field -->
+            <div class="form-group">
+                <label for="portfolio">Portfolio URL:</label>
+                <input type="url" id="portfolio" name="portfolio" placeholder="Enter your portfolio URL">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
 
 </body>
-
 </html>
